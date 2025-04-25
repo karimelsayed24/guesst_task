@@ -14,6 +14,7 @@ class ExperienceSelectionScreen extends StatefulWidget {
 
 class _ExperienceSelectionScreenState extends State<ExperienceSelectionScreen> {
   final _searchController = TextEditingController();
+  final _scrollController = ScrollController();
 
   ExperienceModel? _selectedExperience;
   List<ExperienceModel> _filteredExperiences = [];
@@ -27,6 +28,7 @@ class _ExperienceSelectionScreenState extends State<ExperienceSelectionScreen> {
   @override
   void dispose() {
     _searchController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -114,11 +116,13 @@ class _ExperienceSelectionScreenState extends State<ExperienceSelectionScreen> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.5,
                 child: Scrollbar(
+                  controller: _scrollController,
                   thumbVisibility: true,
                   trackVisibility: true,
                   thickness: 8,
                   radius: const Radius.circular(4),
                   child: ListView.builder(
+                    controller: _scrollController,
                     itemCount: _filteredExperiences.length,
                     itemBuilder: (context, index) {
                       final experience = _filteredExperiences[index];

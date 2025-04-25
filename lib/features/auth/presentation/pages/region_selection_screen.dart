@@ -13,6 +13,7 @@ class RegionSelectionScreen extends StatefulWidget {
 
 class _RegionSelectionScreenState extends State<RegionSelectionScreen> {
   final _searchController = TextEditingController();
+  final _scrollController = ScrollController();
 
   RegionModel? _selectedRegion;
   List<RegionModel> _filteredRegions = [];
@@ -26,6 +27,7 @@ class _RegionSelectionScreenState extends State<RegionSelectionScreen> {
   @override
   void dispose() {
     _searchController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -113,11 +115,13 @@ class _RegionSelectionScreenState extends State<RegionSelectionScreen> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.5,
                 child: Scrollbar(
+                  controller: _scrollController,
                   thumbVisibility: true,
                   trackVisibility: true,
                   thickness: 8,
                   radius: const Radius.circular(4),
                   child: ListView.builder(
+                    controller: _scrollController,
                     itemCount: _filteredRegions.length,
                     itemBuilder: (context, index) {
                       final region = _filteredRegions[index];
