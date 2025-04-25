@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "566750681743",
+    "project_id": "guessit-task",
+    "storage_bucket": "guessit-task.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566750681743:android:333df639171abf5b206efa",
+        "android_client_info": {
+          "package_name": "com.example.guessit_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf8AGLeINCC6QuiFbGdUMa_xkLQSA95aM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
